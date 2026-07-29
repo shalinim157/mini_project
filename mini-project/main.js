@@ -84,9 +84,9 @@ document.addEventListener("click", function (event) {
 
         const student_id = event.target.id.split("_")[1];
 
-        // if (!confirm("Are you sure you want to delete this student?")) {
-        //     return;
-        // }
+        if (!confirm("Are you sure you want to delete this student?")) {
+            return;
+        }
 
         fetch(`http://127.0.0.1:8000/students/${student_id}`, {
             method: "DELETE"
@@ -96,7 +96,7 @@ document.addEventListener("click", function (event) {
                 throw new Error("Delete failed");
             }
 
-            // alert("Student deleted successfully");
+            alert("Student deleted successfully");
 
             // Remove the deleted row from the table
             event.target.closest("tr").remove();
