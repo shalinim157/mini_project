@@ -17,10 +17,10 @@ document.getElementById("studentForm").addEventListener("submit", function (even
         course:course
     };
     if (student_id .trim() === "") {
-    url = "http://127.0.0.1:8000/students";
+    url = "https://mini-project-zdqq.onrender.com/students";
     method = "POST";
 } else {
-    url = `http://127.0.0.1:8000/students/${student_id}`;
+    url = `https://mini-project-zdqq.onrender.com/${student_id}`;
     method = "PUT";
 
 }
@@ -43,7 +43,7 @@ document.getElementById("studentForm").addEventListener("submit", function (even
 
 
 function loadStudents() {
-    fetch("http://127.0.0.1:8000/students/")
+    fetch("https://mini-project-zdqq.onrender.com/students/")
         .then(response => response.json())
         .then(data => {
             const tableBody = document.getElementById("studentTable");
@@ -88,7 +88,7 @@ document.addEventListener("click", function (event) {
             return;
         }
 
-        fetch(`http://127.0.0.1:8000/students/${student_id}`, {
+        fetch(`https://mini-project-zdqq.onrender.com/students/${student_id}`, {
             method: "DELETE"
         })
         .then(response => {
