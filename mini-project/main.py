@@ -11,7 +11,7 @@ app = FastAPI()
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-       "https://mini-project.netlify.app"
+       "https://mini-student-project.netlify.app"
     ],
     allow_credentials=True,
     allow_methods=["*"],
